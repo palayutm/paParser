@@ -30,7 +30,7 @@ def write_problem(data):
 def load_problem(code_path):
     file_name = os.path.splitext(code_path)[0]
     with open(YAML_PATTERN % file_name) as fp:
-        return yaml.load(fp)
+        return yaml.load(fp, Loader=yaml.FullLoader)
 
 
 def parse_problem(url, page=None):
